@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="styles/logo.png">
+    <title>معلومات عنا - تكنوليس</title>
+    <link rel="stylesheet" href="styles/about-styles.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Added Font Awesome -->
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index-ar.html" class="logo-link"></a>
+        </div>
+        <ul>
+            <li><a href="home-ar.php">الصفحة الرئيسية</a></li>
+            <li><a href="about-ar.html">معلومات عنا</a></li>
+            <li><a href="contact-ar.html">اتصل بنا</a></li>
+            <li><a href="login-ar.html">تسجيل الدخول</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li> <!-- Replaced Cart text with icon -->
+        </ul>
+        <div class="language-switch">
+            <a href="about.html">English</a>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="content">
+            <div class="text">
+                <h1>عن تكنوليس</h1>
+                <p>في تكنوليس، نؤمن بأن الألعاب ليست مجرد هواية، بل هي شغف ومجتمع وأسلوب حياة. مهمتنا هي توفير أجهزة الكمبيوتر عالية الجودة للاعبين مثلك، التي تمنح أداءً استثنائيًا وموثوقية عالية.</p>
+                <p><strong>ما نقدمه:</strong></p>
+                <ul>
+                    <li><strong>أجهزة كمبيوتر ألعاب عالية الجودة:</strong> تشكيلة من أجهزة الكمبيوتر المخصصة المصممة لتلبية احتياجات اللاعبين المتنوعة، من اللاعبين العاديين إلى المتحمسين.</li>
+                    <li><strong>نصائح الخبراء:</strong> فريقنا من خبراء الألعاب هنا لمساعدتك في اختيار الكمبيوتر المناسب لاحتياجاتك، مع تقديم توصيات ودعم شخصي.</li>
+                    <li><strong>تخصيص:</strong> نقدم مجموعة من خيارات التخصيص لبناء الكمبيوتر المثالي الذي يتناسب مع تفضيلاتك ومتطلباتك.</li>
+                    <li><strong>خدمة عملاء ممتازة:</strong> رضاك هو أولويتنا القصوى. نحن هنا لدعمك من أول زيارة لك وحتى بعد الشراء.</li>
+                </ul>
+                <p>انضم إلى مجتمع تكنوليس اليوم واكتشف عالمًا من إمكانيات الألعاب. سواء كنت تبحث عن ترقية إعدادك الحالي أو بدء مغامرة جديدة في الألعاب، نحن هنا لتحقيق أحلامك.</p>
+                <p>شكرًا لاختيارك تكنوليس. دعنا نرفع مستوى تجربة الألعاب الخاصة بك إلى مستوى جديد!</p>
+            </div>
+            <div class="handshake-image">
+                <img src="styles/imgs/handshake.jpg" alt="مصافحة ترمز للتعاون والاتفاق">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Technoless / 2024 IMAM / CCIS / IT dept.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var footer = document.querySelector('footer');
+            if (window.innerHeight + window.pageYOffset >= document.body.scrollHeight) {
+                footer.style.display = 'block';
+            } else {
+                footer.style.display = 'none';
+            }
+        });
+
+        document.getElementById('arabic-link').addEventListener('click', function(event) {
+            event.preventDefault(); // منع السلوك الافتراضي للرابط
+            // الحصول على عنوان الصفحة الحالية
+            var currentPage = window.location.pathname;
+            // التبديل إلى الصفحة العربية المقابلة
+            var arabicPage = currentPage.replace('.html', '-ar.html');
+            // الانتقال إلى الصفحة العربية
+            window.location.href = arabicPage;
+        });
+    </script>
+</body>
+</html>

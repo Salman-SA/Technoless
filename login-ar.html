@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="styles/logo.png">
+    <title>تسجيل الدخول - تيكنوليس</title>
+    <link rel="stylesheet" href="styles/login-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- أضفنا Font Awesome -->
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html" class="logo-link"></a>
+        </div>
+        <ul>
+            <li><a href="home-ar.php">الرئيسية</a></li>
+            <li><a href="about-ar.html">من نحن</a></li>
+            <li><a href="contact-ar.html">اتصل بنا</a></li>
+            <li><a href="login-ar.html">تسجيل الدخول</a></li>
+            <li><a href="cart-ar.html"><i class="fas fa-shopping-cart"></i></a></li> <!-- استبدال النص مع أيقونة -->
+        </ul>
+        <div class="language-switch">
+            <a href="login.html">English</a>
+        </div>
+    </nav>
+
+    <section id="login">
+        <div class="content">
+            <form action="login.php" method="post">
+                <label for="username">اسم المستخدم</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="password">كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+
+                <div class="divider"></div> <!-- خط فاصل رفيع -->
+
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Technoless / 2024 IMAM / CCIS / قسم تقنية المعلومات</p>
+    </footer>
+    
+    <script>
+        document.getElementById('english-link').addEventListener('click', function(event) {
+            event.preventDefault(); // منع السلوك الافتراضي للرابط
+            // الحصول على رابط الصفحة الحالي
+            var currentPage = window.location.pathname;
+            // الانتقال إلى الصفحة الإنجليزية المقابلة
+            var englishPage = currentPage.replace('-ar.html', '.html');
+            // الانتقال إلى الصفحة الإنجليزية
+            window.location.href = englishPage;
+        });
+    </script>
+</body>
+</html>

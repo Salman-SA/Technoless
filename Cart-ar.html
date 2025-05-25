@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="styles/logo.png">
+    <title>السلة - Technoless</title>
+    <link rel="stylesheet" href="styles/cart-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- أضفنا Font Awesome -->
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html" class="logo-link"></a>
+        </div>
+        <ul>
+            <li><a href="home-ar.php">الصفحه الرئيسية</a></li>
+            <li><a href="about-ar.html">معلومات عنا</a></li>
+            <li><a href="contact-ar.html">اتصل بنا</a></li>
+            <li><a href="login-ar.html">تسجيل الدخول</a></li>
+            <li><a href="cart-ar.html"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li> <!-- رابط السلة المحدث -->
+        </ul>
+        <div class="language-switch">
+            <a href="cart-en.html">English</a>
+        </div>
+    </nav>
+
+    <section id="cart">
+        <div class="content">
+            <h1>سلتك</h1>
+            <ul id="cartItems">
+                <!-- سيتم إضافة العناصر إلى السلة ديناميكياً هنا -->
+            </ul>
+
+            <div class="cart-summary">
+                <div class="coupon">
+                    <label for="couponCode">كود القسيمة:</label>
+                    <input type="text" id="couponCode" name="couponCode">
+                    <button id="applyCoupon">تطبيق</button>
+                </div>
+                <p id="subtotal">المجموع الفرعي: 0 ريال سعودي</p>
+                <p id="tax">ضريبة المبيعات: 0 ريال سعودي</p>
+                <p id="total">الإجمالي: 0 ريال سعودي</p>
+                <button id="checkout">الانتقال للدفع</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Technoless / 2024 IMAM / CCIS / IT dept.</p>
+    </footer>
+
+    <script src="cart.js"></script>
+
+</body>
+</html>

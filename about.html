@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="styles/logo.png">
+    <title>About Us - Technoless</title>
+    <link rel="stylesheet" href="styles/about-styles.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Added Font Awesome -->
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html" class="logo-link"></a>
+        </div>
+        <ul>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li> <!-- Replaced Cart text with icon -->
+        </ul>
+        <div class="language-switch">
+            <a href="about-ar.html">العربية</a>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="content">
+            <div class="text">
+                <h1>About Technoless</h1>
+                <p>At Technoless, we believe that gaming is more than just a pastime—it's a passion, a community, and a lifestyle. Our mission is to provide gamers like you with the highest quality gaming PCs, built to deliver exceptional performance and reliability.</p>
+                <p><strong>What We Offer:</strong></p>
+                <ul>
+                    <li><strong>Top-Quality Gaming PCs:</strong> Our selection of custom-built gaming PCs is designed to meet the diverse needs of gamers, from casual players to hardcore enthusiasts.</li>
+                    <li><strong>Expert Advice:</strong> Our team of gaming experts is here to help you choose the right PC for your needs, offering personalized recommendations and support.</li>
+                    <li><strong>Customization:</strong> We offer a range of customization options so you can build a PC that perfectly matches your preferences and requirements.</li>
+                    <li><strong>Exceptional Customer Service:</strong> Your satisfaction is our top priority. We're here to support you from your first visit to long after your purchase.</li>
+                </ul>
+                <p>Join the Technoless community today and discover a world of gaming possibilities. Whether you're looking to upgrade your current setup or embark on a new gaming adventure, we're here to make your dreams a reality.</p>
+                <p>Thank you for choosing Technoless. Let's take your gaming experience to the next level!</p>
+            </div>
+            <div class="handshake-image">
+                <img src="styles/imgs/handshake.jpg" alt="Handshake symbolizing cooperation and agreement">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Technoless / 2024 IMAM / CCIS / IT dept.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var footer = document.querySelector('footer');
+            if (window.innerHeight + window.pageYOffset >= document.body.scrollHeight) {
+                footer.style.display = 'block';
+            } else {
+                footer.style.display = 'none';
+            }
+        });
+
+        document.getElementById('arabic-link').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            // Get the current page URL
+            var currentPage = window.location.pathname;
+            // Switch to the corresponding Arabic page
+            var arabicPage = currentPage.replace('.html', '-ar.html');
+            // Navigate to the Arabic page
+            window.location.href = arabicPage;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="styles/logo.png">
+    <title>مرحبا بكم في تكنوليس 2025</title>
+    <link rel="stylesheet" href="styles/styles.css">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Added Font Awesome -->
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index-ar.html" class="logo-link"></a>
+        </div>
+        <ul>
+            <li><a href="home-ar.php">الصفحة الرئيسية</a></li>
+            <li><a href="about-ar.html">معلومات عنا</a></li>
+            <li><a href="contact-ar.html">اتصل بنا</a></li>
+            <li><a href="login-ar.html">تسجيل الدخول</a></li>
+            <li><a href="cart-ar.html"><i class="fas fa-shopping-cart"></i></a></li> <!-- Replaced Cart text with icon -->
+        </ul>
+        <div class="language-switch">
+            <a href="index.html">English</a>
+        </div>
+    </nav>
+
+    <section id="welcome">
+        <div class="welcome-content">
+            <div class="top-text">
+                <h2>وجهتك النهائية لأجهزة الكمبيوتر عالية الأداء.</h2>
+                <p>مرحبا بكم في تكنوليس، حيث تبدأ رحلتك في العثور على السيارة المثالية. نحن نفتخر بتقديم مجموعة متنوعة من المركبات عالية الجودة لتلبية جميع احتياجات القيادة الخاصة بك.</p>
+            </div>
+            <div class="left-right-container">
+                <div class="left-text">
+                    <h3>اعثر على جهاز الكمبيوتر المثالي اليوم!</h3>
+                    <p>تصفح مجموعتنا، واعثر على معلومات مفصلة عن كل جهاز، واتخذ الخطوة الأولى نحو امتلاك جهاز الكمبيوتر المثالي للألعاب. نحن هنا لمساعدتك في اتخاذ قرار مستنير بثقة.</p>
+                </div>
+                <div class="right-text">
+                    <h3>هل أنت مستعد للبدء؟</h3>
+                    <p>انقر على زر الصفحة الرئيسية لبدء البحث أو اتصل بنا مباشرة للحصول على مساعدة مخصصة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Technoless / 2024 IMAM / CCIS / IT dept.</p>
+    </footer>
+    <script>
+        document.getElementById('arabic-link').addEventListener('click', function(event) {
+            event.preventDefault(); // منع السلوك الافتراضي للرابط
+            // الحصول على عنوان الصفحة الحالية
+            var currentPage = window.location.pathname;
+            // التبديل إلى الصفحة العربية المقابلة
+            var arabicPage = currentPage.replace('.html', '-ar.html');
+            // الانتقال إلى الصفحة العربية
+            window.location.href = arabicPage;
+        });
+    </script>
+</body>
+</html>
