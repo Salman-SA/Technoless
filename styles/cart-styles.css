@@ -1,0 +1,251 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgs/cart.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000; /* Fallback color */
+}
+
+nav {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Shift items to the right */
+    align-items: center;
+    padding: 1em 1em; /* Adjust padding */
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays on top */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: relative; /* Make sure the pseudo-element is positioned relative to the nav */
+     /* Hide any overflowed content */
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Start the line from the left */
+    margin-left: 100px; /* Move the line after the logo */
+    width: calc(100% - 230px); /* Adjust width to leave space for the logo */
+    height: 1px; /* Thin line */
+    background-color: rgba(255, 255, 255, 0.2); /* Light color for the line */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    margin-right: 0px;
+}
+
+.logo-link {
+    background: url('logo.png') no-repeat left center; /* Logo as a background image */
+    background-size: contain;
+    height: 100px; /* Increase height */
+    width: 100px; /* Increase width */
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    margin-left: 1px; /* Shift the navigation items to the right */
+    flex-grow: 1; /* Allows the ul to take available space */
+    flex-wrap: nowrap; /* Wrap items to the next line if needed */
+}
+
+nav ul li {
+    margin: 0 15px; /* Increase margin to fit more items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    padding: 1em 0.5em; /* Adjust padding to fill selection area */
+    display: block; /* Ensure link fills the entire area */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+nav ul li a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+}
+
+.language-switch {
+    margin-left: auto; /* Push the language switch to the far right */
+    margin-right: 150px; /* Shift slightly to the left */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.language-switch a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+.language-switch a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+    padding: 0.5em; /* Add some padding for effect */
+}
+
+/* Cart Page Styles */
+#cart {
+    flex: 1;
+    display: flex;
+    justify-content: Start;
+    align-items: flex-start;
+    padding: 2em;
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    width: 100%;
+}
+
+#cart h1 {
+    margin-top: 0;
+    font-size: 2em;
+    color: white;
+}
+
+#cartItems {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item h3 {
+    margin: 0 0 0.5em;
+    font-size: 1.5em;
+    color: white;
+}
+
+.cart-item p {
+    margin: 0.5em 0;
+    color: white;
+}
+
+.cart-item .remove {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-end;
+    transition: background 0.3s;
+}
+
+.cart-item .remove:hover {
+    background: #e64a19;
+}
+
+/* Summary Styles */
+.cart-summary {
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid #ddd;
+    color: white; /* Ensure text color is white */
+    position: absolute;
+    right: 19em;
+    top: 15em;
+    background: rgba(0, 0, 0, 0.5); /* Transparent background */
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary p {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}
+
+.coupon {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+#couponCode {
+    padding: 0.5em;
+    width: calc(100% - 100px);
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1em;
+}
+
+#applyCoupon {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    transition: background 0.3s;
+}
+
+#applyCoupon:hover {
+    background: #e64a19;
+}
+
+#checkout {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1em 2em;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.2em;
+    transition: background 0.3s;
+    margin-top: 1em;
+}
+
+#checkout:hover {
+    background: #388E3C;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white; /* Ensure footer text is white */
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    position: fixed; /* Make footer fixed */
+    bottom: 0;
+    z-index: 1000; /* Ensures the footer stays on top */
+}

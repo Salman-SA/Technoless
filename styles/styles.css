@@ -1,0 +1,210 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgs/welcome-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000; /* Fallback color */
+}
+
+nav {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Shift items to the right */
+    align-items: center;
+    padding: 1em 1em; /* Adjust padding */
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays on top */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: relative; /* Make sure the pseudo-element is positioned relative to the nav */
+	overflow: hidden; /* Hide any overflowed content */
+
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Start the line from the left */
+    margin-left: 100px; /* Move the line after the logo */
+    width: calc(100% - 230px); /* Adjust width to leave space for the logo */
+    height: 1px; /* Thin line */
+    background-color: rgba(255, 255, 255, 0.2); /* Light color for the line */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+margin-right: 0px;
+}
+
+.logo-link {
+    background: url('logo.png') no-repeat left center; /* Logo as a background image */
+    background-size: contain;
+    height: 100px; /* Increase height */
+    width: 100px; /* Increase width */
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    margin-left: 1px; /* Shift the navigation items to the right */
+
+    flex-grow: 1; /* Allows the ul to take available space */
+    flex-wrap: wrap; /* Wrap items to the next line if needed */
+}
+
+nav ul li {
+    margin: 0 15px; /* Increase margin to fit more items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    padding: 1em 0.5em; /* Adjust padding to fill selection area */
+    display: block; /* Ensure link fills the entire area */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+nav ul li a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+}
+
+.language-switch {
+    margin-left: auto; /* Push the language switch to the far right */
+    margin-right: 150px; /* Shift slightly to the left */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.language-switch a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+.language-switch a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+    padding: 0.5em; /* Add some padding for effect */
+}
+
+#welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2em;
+    color: white;
+    height: calc(100vh - 60px); /* Adjust height to account for fixed nav and footer */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.welcome-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 2em;
+    border-radius: 10px;
+    width: 90%; /* Increase width to stretch the box */
+    max-width: 1200px; /* Adjust max width to fit content properly */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-text {
+    text-align: center;
+    font-size: 1.5em; /* Increase font size */
+    margin-bottom: 2em; /* Add space between top and left-right text */
+}
+
+.left-right-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.left-text, .right-text {
+    width: 48%; /* Adjust widths to fit side by side */
+}
+
+.left-text h3, .right-text h3 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+}
+
+.left-text p, .right-text p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+
+footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white; /* Ensure footer text is white */
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000; /* Ensures the footer stays on top */
+}
+
+
+/* Responsive Design */
+@media only screen and (max-width:2px) {
+    nav ul {
+        flex-direction: rows; /* Stack navigation items vertically */
+        align-items: center;
+    }
+    .logo-link {
+        width: 80px; /* Adjust logo size */
+        height: 60px; /* Adjust logo height */
+    }
+    .top-text, .left-right-container {
+        margin: 10px 0; /* Adjust margin for mobile */
+    }
+    .left-right-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+    .left-text, .right-text {
+        margin: 10px 0; /* Adjust spacing */
+    }
+    .car img {
+        width: 50%; /* Full width for images */
+    }
+    body {
+        font-size: 16px; /* Adjust font size for better readability */
+    }
+}
+
+@media only screen and (max-width: 1px) {
+    .welcome-content {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    body {
+        font-size: 14px; /* Adjust font size for small screens */
+    }
+}
+

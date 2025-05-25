@@ -1,0 +1,243 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Consistent font family */
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgs/Contactus-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000; /* Fallback color */
+}
+
+nav {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Shift items to the right */
+    align-items: center;
+    padding: 1em 1em; /* Adjust padding */
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays on top */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: relative; /* Make sure the pseudo-element is positioned relative to the nav */
+	overflow: hidden; /* Hide any overflowed content */
+
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Start the line from the left */
+    margin-left: 100px; /* Move the line after the logo */
+    width: calc(100% - 230px); /* Adjust width to leave space for the logo */
+    height: 1px; /* Thin line */
+    background-color: rgba(255, 255, 255, 0.2); /* Light color for the line */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+margin-right: 0px;
+}
+
+.logo-link {
+    background: url('logo.png') no-repeat left center; /* Logo as a background image */
+    background-size: contain;
+    height: 100px; /* Increase height */
+    width: 100px; /* Increase width */
+    border-radius: 50%;
+    text-decoration: none;
+    
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+margin-left: 1px; /* Shift the navigation items to the right */
+    flex-grow: 1; /* Allows the ul to take available space */
+    flex-wrap: wrap; /* Wrap items to the next line if needed */
+}
+
+nav ul li {
+    margin: 0 15px; /* Reduce margin to fit more items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+padding: 1em 0.5em; /* Adjust padding to fill selection area */
+ display: block; /* Ensure link fills the entire area */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+nav ul li a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+}
+.language-switch {
+    margin-left: auto; /* Push the language switch to the far right */
+    margin-right: 150px; /* Shift slightly to the left */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.language-switch a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+.language-switch a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+    padding: 0.5em; /* Add some padding for effect */
+}
+
+/* Contact Page Styles */
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center-align text */
+    padding: 2em;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 40px; /* Adjust margin to account for the fixed nav */
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 60%; /* Adjust width to fit content */
+    margin: 20px auto; /* Center content */
+}
+
+.content h1 {
+    font-size: 2.5em; /* Adjust font size for the heading */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align form elements */
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure full width */
+    margin-bottom: 20px; /* Add space between form-row and next element */
+}
+
+.form-group {
+    width: 45%; /* Adjust width for the form groups */
+    margin: 0 20px; /* Add more margin between form groups */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"] {
+    font-size: 1em;
+    padding: 10px;
+    border: 2px solid #fff; /* Add border to the input fields */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    width: 100%;
+    text-align: center; /* Center-align text inside the input fields */
+}
+
+textarea {
+    font-size: 1em;
+    padding: 10px;
+    border: 2px solid #fff; /* Add border to the textarea */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    width: 100%;
+    text-align: center; /* Center-align text inside the textarea */
+    margin-bottom: 20px; /* Add margin-bottom for spacing */
+}
+
+.upload-container {
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed #fff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    position: relative; /* Make position relative for proper layout */
+}
+
+.upload-container:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.upload-container input[type="file"] {
+    display: none;
+}
+
+.upload-container::before {
+    content: "Click to drop file or image";
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #131e27; /* Dark blue color */
+    color: white;
+    cursor: pointer;
+    width: 50%; /* Stretch the button to full width */
+}
+
+button:hover {
+    background-color: #467195;
+}
+
+footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white; /* Ensure footer text is white */
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000; /* Ensures the footer stays on top */
+   
+}

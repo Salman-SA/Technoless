@@ -1,0 +1,181 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgs/AboutUs-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000; /* Fallback color */
+  color: white;
+}
+
+nav {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Shift items to the right */
+    align-items: center;
+    padding: 1em 1em; /* Adjust padding */
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays on top */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: relative; /* Make sure the pseudo-element is positioned relative to the nav */
+	overflow: hidden; /* Hide any overflowed content */
+
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Start the line from the left */
+    margin-left: 100px; /* Move the line after the logo */
+    width: calc(100% - 230px); /* Adjust width to leave space for the logo */
+    height: 1px; /* Thin line */
+    background-color: rgba(255, 255, 255, 0.2); /* Light color for the line */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+margin-right: 0px;
+}
+
+.logo-link {
+    background: url('logo.png') no-repeat left center; /* Logo as a background image */
+    background-size: contain;
+    height: 100px; /* Increase height */
+    width: 100px; /* Increase width */
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    margin-left: 1px; /* Shift the navigation items to the right */
+
+    flex-grow: 1; /* Allows the ul to take available space */
+    flex-wrap: wrap; /* Wrap items to the next line if needed */
+}
+
+nav ul li {
+    margin: 0 15px; /* Increase margin to fit more items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    padding: 1em 0.5em; /* Adjust padding to fill selection area */
+    display: block; /* Ensure link fills the entire area */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+nav ul li a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+}
+
+.language-switch {
+    margin-left: auto; /* Push the language switch to the far right */
+    margin-right: 150px; /* Shift slightly to the left */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.language-switch a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+.language-switch a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+    padding: 0.5em; /* Add some padding for effect */
+}
+
+/* About Us Page Styles */
+#about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left; /* Align text to the left */
+    padding: 2em;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: -12px; /* Adjust margin to account for the fixed nav */
+}
+
+.content {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Add space between text and image */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: 0px 0 0px rgba(0, 0, 0, 0.5);
+    width: 80%; /* Adjust width to fit content */
+    
+}
+
+.text {
+    width: 60%; /* Adjust width for text */
+margin-left: 50px;
+  color: white;
+}
+
+.text h1 {
+    font-size: 2.5em; /* Adjust font size for the heading */
+    margin-bottom: auto;
+}
+
+.text p {
+    font-size: 1.2em; /* Adjust font size for the paragraph text */
+    line-height: 1.6; /* Adjust line height for better readability */
+    margin-bottom: auto;
+}
+
+.handshake-image {
+    width:40%; /* Adjust width for the image */
+    text-align:right; /* Align the image to the right */
+    opacity: 0.7; /* Make the image slightly transparent */
+margin-right: 60px;
+margin-left: 60px;
+margin-top: 100px;
+}
+
+.handshake-image img {
+
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white; /* Ensure footer text is white */
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000; /* Ensures the footer stays on top */
+    
+}

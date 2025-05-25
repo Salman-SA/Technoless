@@ -1,0 +1,224 @@
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imgs/login-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #000; /* Fallback color */
+}
+
+nav {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Shift items to the right */
+    align-items: center;
+    padding: 1em 1em; /* Adjust padding */
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays on top */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: relative; /* Make sure the pseudo-element is positioned relative to the nav */
+	overflow: hidden; /* Hide any overflowed content */
+
+}
+
+nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0; /* Start the line from the left */
+    margin-left: 100px; /* Move the line after the logo */
+    width: calc(100% - 230px); /* Adjust width to leave space for the logo */
+    height: 1px; /* Thin line */
+    background-color: rgba(255, 255, 255, 0.2); /* Light color for the line */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+margin-right: 0px;
+}
+
+.logo-link {
+    background: url('logo.png') no-repeat left center; /* Logo as a background image */
+    background-size: contain;
+    height: 100px; /* Increase height */
+    width: 100px; /* Increase width */
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+    margin-left: 1px; /* Shift the navigation items to the right */
+
+    flex-grow: 1; /* Allows the ul to take available space */
+    flex-wrap: wrap; /* Wrap items to the next line if needed */
+}
+
+nav ul li {
+    margin: 0 15px; /* Increase margin to fit more items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    padding: 1em 0.5em; /* Adjust padding to fill selection area */
+    display: block; /* Ensure link fills the entire area */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+nav ul li a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+}
+
+.language-switch {
+    margin-left: auto; /* Push the language switch to the far right */
+    margin-right: 150px; /* Shift slightly to the left */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.language-switch a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3em; /* Increase font size */
+    transition: color 0.3s, font-weight 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+.language-switch a:hover {
+    color: #00000; /* Change to gold color on hover */
+    font-weight: bold; /* Make the font bold on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Add a subtle background color */
+    padding: 0.5em; /* Add some padding for effect */
+}
+
+/* Login Page Styles */
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Shift login area to the left */
+    text-align: left; /* Align text to the left */
+    padding:5em;
+    color: white;
+    width: 70%;
+    box-sizing: border-box;
+    margin-top: 0px; /* Adjust margin to account for the fixed nav and drop it down */
+}
+
+.content {
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 50%; /* Adjust width to fit content */
+    margin: 20px; /* Remove auto to shift content to the left */
+}
+
+.content h1 {
+    font-size: 3em; /* Adjust font size for the heading */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align form elements to the left */
+    width: 100%; /* Make form full width */
+}
+
+label {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+ margin-top: 25px;
+    display: block;
+    width: 94%; /* Match width of inputs */
+    align-self: center; /* Center the labels */
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 1.2em;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    width: 90%; /* Adjust width for input fields */
+    align-self: center;
+}
+
+input[type="password"] {
+    margin-top: 00px; /* Space above password */
+    margin-bottom: 10px; /* Adjust margin for space */
+}
+
+button {
+    font-size: 1.5em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #131e27; /* Dark blue color */
+    color: white;
+    cursor: pointer;
+    width: 90%; /* Adjust width for button */
+    align-self: center; /* Center the button within the form */
+}
+
+button:hover {
+    background-color: #437299; /* Slightly darker blue on hover */
+}
+
+.divider {
+    margin: 20px 0; /* Add margin for space between sections */
+    width: 90%; /* Match width of inputs */
+    height: 1px; /* Thin line */
+    background-color: rgba(255, 255, 255, 0.2); /* Light color for the divider */
+    align-self: center; /* Center the divider */
+}
+
+.google-signin {
+    font-size: 1.5em;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #db4437; /* Google red color */
+    color: white;
+    cursor: pointer;
+    width: 90%; /* Adjust width for button */
+    margin: 0 auto; /* Center the button using auto margins */
+    display: flex;
+    justify-content: center; /* Center the text inside the button */
+}
+
+.google-signin:hover { background-color: #c23321; /* Slightly darker red on hover */ } 
+
+
+
+footer { 
+
+background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); /* Less intense gradient */
+
+
+ color: white; /* Ensure footer text is white */ 
+
+
+text-align: center; padding: 1em 0; width: 100%; position: fixed; /* Make footer fixed */ 
+
+bottom: 0; z-index: 1000; /* Ensures the footer stays on top */ 
